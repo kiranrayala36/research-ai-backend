@@ -17,8 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 6. Copy the rest of your application code
 COPY . .
 
-# 7. Expose the port FastAPI runs on
-EXPOSE 8000
+# 7. Expose the port Hugging Face expects
+EXPOSE 7860
 
-# 8. Command to run the Ultra-fast Uvicorn server
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+# 8. Command to run the server on port 7860
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "7860"]
